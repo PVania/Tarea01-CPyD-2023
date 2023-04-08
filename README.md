@@ -24,7 +24,7 @@ Ejemplo de salida:
   [Text]
   
   ## Integrantes
-  > Claudia Silva (claudio.silvaa@utem.cl)<br />
+  > Claudio Silva (claudio.silvaa@utem.cl)<br />
   > Virla Parra (virla.parrar@utem.cl)<br />
   > Vania Palacios (vpalacios@utem.cl)
   
