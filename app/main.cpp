@@ -203,7 +203,7 @@ int main() {
   string pop;
   int k = 1;
   cout << "===Resultado===\n";
-  if (highestGrade > 2) {
+  if (highestGrade != 2) {
     // cout << "Opcion 1" << endl;
     roots = rootReal(coef, highestGrade + 1);
     pop = roots.back();
