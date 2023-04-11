@@ -16,15 +16,15 @@ vector<string> rootsComplexDegreeTwo(float a, float b, float c) {
   if (discriminant > 0) {
     x1 = (-b + sqrt(discriminant)) / (2 * a);
     x2 = (-b - sqrt(discriminant)) / (2 * a);
-    // Caso 1: Raíces reales y diferentes
-    // cout << "R 1: " << x1 << endl;
-    // cout << "R 2: " << x2 << endl;
+    //Caso 1: Raíces reales y diferentes
+    //cout << "R 1: " << x1 << endl;
+    //cout << "R 2: " << x2 << endl;
     roots.push_back(to_string(x1));
     roots.push_back(to_string(x2));
   } else if (discriminant == 0) {
-    // Caso 2: Raíces reales y iguales
+    //Caso 2: Raíces reales y iguales
     x1 = (-b + sqrt(discriminant)) / (2 * a);
-    // cout << "R 1: " << x1 << endl;
+    //cout << "R 1: " << x1 << endl;
     roots.push_back(to_string(x1));
   } else {
     realPart = -b / (2 * a);

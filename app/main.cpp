@@ -1,3 +1,5 @@
+#include "complex.h"
+#include "real.h"
 #include <cstdlib>
 #include <iostream>
 #include <regex>
@@ -27,8 +29,8 @@ int main() {
   */
   /*SINTAXIS DE INGRESO DEL POLINOMIO*/
   /* nx**m + nx**m - nx**m - nx + n */
-  cout << "Formato del polinomio: nx**m - nx + n";
-  cout << "\nPolinomio: ";
+  //cout << "Formato del polinomio: nx**m - nx + n";
+  //cout << "\nPolinomio: ";
   cin >> polynomial;
   // x**3 + x
 
@@ -86,41 +88,41 @@ int main() {
   for (int i = 0; i < tokens.size(); i++) {
     string word;
     word = tokens[i];
-    cout << "Token: " << word << endl;
+    //    cout << "Token: " << word << endl;
     int p = posCaracter(word, '-');
-    cout << "Largo del token: " << word.length() << endl;
-    cout << typeid(word).name() << endl;
+    //    cout << "Largo del token: " << word.length() << endl;
+    //    cout << typeid(word).name() << endl;
     char c;
     int sizeW = word.length();
-    cout << "P: " << p << endl;
-    cout << "Error [1]" << endl;
+    //    cout << "P: " << p << endl;
+    //    cout << "Error [1]" << endl;
     if (p != -1) { // Hay signo
-      cout << "Error [1.1]" << endl;
+                   //      cout << "Error [1.1]" << endl;
       while (word.length() > 1) {
-        cout << "Error [1.2]" << endl;
+        //        cout << "Error [1.2]" << endl;
         c = word.back();
         // Caso 1: 2x**3
-        if (sizeW-1 == 5) {
-          cout << "Error [1.3]" << endl;
-          if(degree == 0)
+        if (sizeW - 1 == 5) {
+          //          cout << "Error [1.3]" << endl;
+          if (degree == 0)
             degree = c - '0';
           if (c != '*' && c != 'x') {
             num = (c - '0') * -1;
           }
         }
         // Caso 2: x**3
-        if (sizeW-1 == 4) {
-          cout << "Error [1.4]" << endl;
-          if(degree == 0)
+        if (sizeW - 1 == 4) {
+          //          cout << "Error [1.4]" << endl;
+          if (degree == 0)
             degree = c - '0';
           if (c != '*' && c != 'x') {
             num = -1;
           }
         }
         // Caso 3: 2x
-        if (sizeW-1 <= 2 && sizeW >= 1) {
-          cout << "Error [1.5]" << endl;
-          if(degree == 0)
+        if (sizeW - 1 <= 2 && sizeW >= 1) {
+          //          cout << "Error [1.5]" << endl;
+          if (degree == 0)
             degree = 1;
           if (c != 'x') { // Hay numero
             num = (c - '0') * -1;
@@ -129,22 +131,22 @@ int main() {
           }
         }
         // Caso 4: n
-        if (sizeW-1 == 1 && c != 'x') {
-          cout << "Error [1.6]" << endl;
+        if (sizeW - 1 == 1 && c != 'x') {
+          //          cout << "Error [1.6]" << endl;
           degree = 0;
           num = (c - '0') * -1;
         }
         word.pop_back();
       }
     } else { // No hay signo
-      cout << "Error [2.1]" << endl;
+             //      cout << "Error [2.1]" << endl;
       while (word.length() > 0) {
         c = word.back();
-        cout << "Error [2.2]" << endl;
+        //        cout << "Error [2.2]" << endl;
         // Caso 1: 2x**3
         if (sizeW == 5) {
-          cout << "Error [2.3]" << endl;
-          if(degree == 0)
+          //          cout << "Error [2.3]" << endl;
+          if (degree == 0)
             degree = c - '0';
           if (c != '*' && c != 'x') {
             num = (c - '0');
@@ -152,17 +154,17 @@ int main() {
         }
         // Caso 2: x**3
         if (sizeW == 4) {
-          cout << "Error [2.4]" << endl;
-          if(degree == 0)
+          //          cout << "Error [2.4]" << endl;
+          if (degree == 0)
             degree = c - '0';
           if (c != '*' && c != 'x') {
             num = 1;
           }
         }
         // Caso 3: 2x
-        if (sizeW-1 <= 2 && sizeW >= 1) {
-          cout << "Error [2.5]" << endl;
-          if(degree == 0)
+        if (sizeW - 1 <= 2 && sizeW >= 1) {
+          //          cout << "Error [2.5]" << endl;
+          if (degree == 0)
             degree = 1;
           if (c != 'x') { // Hay numero
             num = (c - '0');
@@ -172,29 +174,70 @@ int main() {
         }
         // Caso 4: n
         if (sizeW == 1 && c != 'x') {
-          cout << "Error [2.6]" << endl;
+          //          cout << "Error [2.6]" << endl;
           degree = 0;
           num = c - '0';
         }
-        cout << "Largo actualizado: " << word.length();
+        //        cout << "Largo actualizado: " << word.length();
         word.pop_back();
       }
     }
-    cout << "\nGrado: " << degree << endl;
-    cout << "Coef: " << num << endl;
-    
+    //    cout << "\nGrado: " << degree << endl;
+    //    cout << "Coef: " << num << endl;
+
     coef[degree] = num;
     degree = 0;
   }
 
   //* DE AQUI PARA ARRIBA BORREN LOS COMENTARIOS INECESARIO PLS*//
-  cout << "--------------------------" << endl;
+  // cout << "--------------------------" << endl;
 
   // 4.  Entregando arreglo con coef segun grado
-  for (int j = 0; j < highestGrade + 1; j++) {
-    cout << "Gr [" << j << "]: " << coef[j] << endl;
-  }
+  // for (int j = 0; j < highestGrade + 1; j++) {
+  // cout << "Gr [" << j << "]: " << coef[j] << endl;
+  //}
 
+  /*RESULTADO FINAL*/
   // 5. Mostrar raíces
-  // Este paso falta, acomodar las funciones al codigo y mostrar las raices como quiere el profe (El punto 4 se puede borrar, es solo para saber si esta guardando el polinomio bien)
+  vector<string> roots;
+  string pop;
+  int k = 1;
+  cout << "===Resultado===\n";
+  if (highestGrade > 2) {
+    // cout << "Opcion 1" << endl;
+    roots = rootReal(coef, highestGrade + 1);
+    pop = roots.back();
+    cout << "x" << k << " = " << pop << endl;
+    roots.pop_back();
+    k++;
+  }
+  if (highestGrade == 2) {
+    // cout << "Opcion 2" << endl;
+    roots = rootsComplexDegreeTwo(coef[2], coef[1], coef[0]);
+    pop = roots.back();
+    cout << "x" << k << " = " << pop << endl;
+    roots.pop_back();
+    k++;
+  }
+  if (highestGrade == 3) {
+    // cout << "Opcion 3" << endl;
+    //  Derivar
+    int dx[3] = {0, 0, 0};
+    for (int i = 0; i < highestGrade + 1; i++) { // 0 1 2 3
+      if (coef[i] != 0) {                        // 0 1 0 3
+        if (i != 0) {                            // 1 3
+          dx[i - 1] = coef[i] * i;               // dx[0]=1 dx[2]=9
+        }
+      }
+    }
+    roots = rootsComplexDegreeTwo((float)dx[2], (float)dx[1], (float)dx[0]);
+    while (!roots.empty()) {
+      pop = roots.back();
+      cout << "x" << k << " = " << pop << endl;
+      roots.pop_back();
+      k++;
+    }
+  }
+  cout << "\n===Integrantes===\nVirla Parra\nClaudio Silva\nVania Palacios"
+       << endl;
 }
