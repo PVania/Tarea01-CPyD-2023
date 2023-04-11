@@ -21,7 +21,7 @@ Ejemplo de salida:
 	Diego Diegoso
  ```
   ## Instalación y ejecución
-  (Ejecución del programa por medio de Ubuntu )
+  (Ejecución del programa por medio de Ubuntu 22.04 virtualbox)
   1. Descargue el archivo, por defecto se guardará en descargas.
   2. Inicie la terminal.
   3. Acceda al directorio en donde se encuentra la carpeta y ejecute el programa. Ej.: /Descargas/Taller01 ```./main 3x**3+x```
